@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "31 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm test
+      - run: bash scripts/security-check.sh
+      - uses: gitleaks/gitleaks-action@v2

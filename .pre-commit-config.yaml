@@ -1,0 +1,12 @@
+repos:
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.30.1
+    hooks:
+      - id: gitleaks
+  - repo: local
+    hooks:
+      - id: publication-security-check
+        name: publication security check
+        entry: bash scripts/security-check.sh
+        language: system
+        pass_filenames: false

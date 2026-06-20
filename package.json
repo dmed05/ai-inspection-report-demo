@@ -1,0 +1,14 @@
+{
+  "name": "ai-inspection-report-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.mjs",
+    "test": "node --test",
+    "security": "bash scripts/security-check.sh"
+  }
+}
