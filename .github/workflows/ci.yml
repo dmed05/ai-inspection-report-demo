@@ -22,4 +22,4 @@ jobs:
           cache: npm
       - run: npm test
       - run: bash scripts/security-check.sh
-      - uses: gitleaks/gitleaks-action@v2
+      - uses: gitleaks/gitleaks-action@v3
